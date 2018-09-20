@@ -1,6 +1,4 @@
-import numpy as mypy
 import threading
-
 import socket as mysoc
 
 def client():
@@ -21,15 +19,15 @@ def client():
     with open('HW1test.txt') as f:
         lines = f.readlines()
     f.close()
-    print(lines)
 
     output_file = open("HW1out.txt","w")
 
     for i in lines:
         cs.sendall(i.encode('utf-8'))
-        data_from_server = cs.recv(100)
+        data_from_server = cs.recv(1024)
         msg_decoding = data_from_server.decode('utf-8')
-        print("Getting message from server:", msg_decoding)
+        print("Message sent by the client: ", i)
+        print("**Message Received by the client: " , msg_decoding)
         output_file.write(msg_decoding)
 
     output_file.close()
@@ -41,6 +39,5 @@ def client():
 t2 = threading.Thread(name='client', target=client)
 t2.start()
 
-print("Hit ENTER to exit")
-input("Hit ENTER  to exit")
+input("Hit ENTER  to exit\n")
 exit()

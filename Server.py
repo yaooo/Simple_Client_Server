@@ -38,5 +38,5 @@ def server():
 t1 = threading.Thread(name='server', target=server)
 t1.start()
 
-input("Hit ENTER  to exit")
+input("Hit ENTER  to exit\n")
 exit()
