@@ -8,18 +8,19 @@ def client():
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
 
-# Define the port on which you want to connect to the server
+    # Define the port on which you want to connect to the server
     port = 6666
     sa_sameas_myaddr = mysoc.gethostbyname(mysoc.gethostname())
     # connect to the server on local machine
     server_binding = (sa_sameas_myaddr, port)
     cs.connect(server_binding)
 
-    #READ FILE
+    # READ FILE
     with open('HW1test.txt') as f:
         lines = f.readlines()
     f.close()
 
+    # Make the output file
     output_file = open("HW1out.txt","w")
 
     for i in lines:
