@@ -2,8 +2,8 @@ import numpy as np
 import socket as mysoc
 import threading
 
-DNSRS = "PROJ1-DNSRS.txt"
-port_RS = 6666
+DNSRS = "PROJI-DNSRS.txt"
+port_RS = 5001
 
 
 def read_file(file_name):
@@ -18,12 +18,10 @@ def lookup(hostname_string):
     for i in lines:
         x = i.split()
         if hostname_string.lower() == x[0].lower():
-            return i.strip("\n") + " A\n"
-    return "TS_hostname - NS\n"
-
-
-print(lookup("supremenewyork.com"))
-
+            if not i.endswith("\n"):
+                return i + "\n"
+            return i
+    return hostname_string + " - NS\n"
 
 def server():
     try:
@@ -35,11 +33,11 @@ def server():
     ss.bind(server_binding)
     ss.listen(1)
     host = mysoc.gethostname()
-    print("[S]: Server host name is: ", host)
+    print("[RS]: Server host name is: ", host)
     localhost_ip = (mysoc.gethostbyname(host))
-    print("[S]: Server IP address is  ", localhost_ip)
+    print("[RS]: Server IP address is  ", localhost_ip)
     csockid, addr = ss.accept()
-    print("[S]: Got a connection request from a client at", addr)
+    print("[RS]: Got a connection request from a client at", addr)
 
     # Receiving message and reverse the message
     while 1:

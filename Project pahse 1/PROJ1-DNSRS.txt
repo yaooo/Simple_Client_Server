@@ -1,3 +1,0 @@
-supremenewyork.com 127.0.0.1
-facebook.com 127.0.0.4
-yahoo.com 127.0.0.5
