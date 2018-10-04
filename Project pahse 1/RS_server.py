@@ -12,16 +12,26 @@ def read_file(file_name):
     f.close()
     return lines
 
+def findNS(file):
+    with open(file) as f:
+        lines = f.readlines()
+    f.close()
+    for i in lines:
+        if i.endswith("NS") or i.endswith("NS\n"):
+            return i
+    return "ERROR. NO NS HOSTNAME FOUND."
+
 
 def lookup(hostname_string):
     lines = read_file(DNSRS)
     for i in lines:
-        x = i.split()
-        if hostname_string.lower() == x[0].lower():
+        if len(i) < 3:
+            break
+        if i.startswith(hostname_string.lower()):
             if not i.endswith("\n"):
                 return i + "\n"
             return i
-    return hostname_string + " - NS\n"
+    return findNS(DNSRS).strip("\n") + "\n"
 
 def server():
     try:

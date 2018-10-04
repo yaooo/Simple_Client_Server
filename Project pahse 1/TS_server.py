@@ -16,8 +16,9 @@ def read_file(file_name):
 def lookup(hostname_string):
     lines = read_file(DNSTS)
     for i in lines:
-        x = i.split()
-        if hostname_string.lower() == x[0].lower():
+        if len(i) < 3:
+            break
+        if i.startswith(hostname_string.lower()):
             if not i.endswith("\n"):
                 return i + "\n"
             return i
@@ -43,12 +44,13 @@ def server():
     while 1:
         data_from_client = csockid.recv(100)
         if not data_from_client:
-            csockid, addr = ss.accept()
+            if not data_from_client: break
         msg_decoding = data_from_client.decode('utf-8')
 
         if not len(msg_decoding.strip("\n")) == 0:
             print("Hostname from client:", msg_decoding)
             text = lookup(msg_decoding)
+            print("Test:" + text)
             csockid.send(text.encode('utf-8'))
         time.sleep(1)
     ss.close()
