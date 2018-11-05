@@ -1,9 +1,8 @@
 import socket as mysoc
 import threading
 import time
-Port_RS = 5001
-Port_TS = 6000
-DNSTS = "PROJI-DNSTS1.txt"
+Port_TS1 = 6000
+DNSTS = "PROJ2-DNSCOM.txt"
 
 
 def read_file(file_name):
@@ -14,23 +13,23 @@ def read_file(file_name):
 
 
 def lookup(hostname_string):
+    if hostname_string.startswith("www."):
+        hostname_string = hostname_string[4:].strip("\n")
     lines = read_file(DNSTS)
     for i in lines:
-        if len(i) < 3:
-            break
-        if i.startswith(hostname_string.lower()):
+        if i.find(hostname_string.lower()) != -1:
             if not i.endswith("\n"):
                 return i + "\n"
             return i
-    return hostname_string + " - ERROR: HOST NOT FOUND\n"
+    return "ERROR\n"
 
-def server():
+def server1():
     try:
         ss = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
         print("[S]: RS Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    server_binding = ('', Port_TS)
+    server_binding = ('', Port_TS1)
     ss.bind(server_binding)
     ss.listen(1)
     host = mysoc.gethostname()
@@ -57,7 +56,7 @@ def server():
     exit()
 
 
-t1 = threading.Thread(name='server', target=server)
+t1 = threading.Thread(name='server1', target=server1)
 t1.start()
 
 input("Hit ENTER  to exit\n")

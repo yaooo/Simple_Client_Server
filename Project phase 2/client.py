@@ -1,13 +1,8 @@
 import threading
 import socket as mysoc
 import time
-port_TS = 6000
 port_RS = 5001
-hostname_file = "PROJI-HNS.txt"
-
-class attr:
-    count_TS = 0
-    CS = None
+hostname_file = "PROJ2-HNS.txt"
 
 
 def read_file(file_name):
@@ -60,25 +55,11 @@ def client():
         print("Message sent by the client: ", temp)
         print("**Message Received by the client: ", msg_decoding)
 
-        if msg_decoding.endswith("NS\n") or msg_decoding.endswith("NS"):
-            if attr.CS is None:
-                TS_name = msg_decoding.split()
-                attr.CS = connect_to_TS(TS_name[0])
 
-            attr.CS.sendall(temp.encode('utf-8'))
-            time.sleep(2)
-            data_from_server1 = attr.CS.recv(100)
-            msg_decoding1 = data_from_server1.decode('utf-8')
-            print("Message from TS:" + msg_decoding1)
-            output_file.write(msg_decoding1)
-        else:
-            output_file.write(msg_decoding)
+        output_file.write(msg_decoding)
     output_file.close()
-
     # close the client socket
     cs.close()
-    if attr.CS is not None:
-        attr.CS.close()
     exit()
 
 
