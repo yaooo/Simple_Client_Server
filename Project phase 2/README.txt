@@ -1,7 +1,7 @@
 Yao Shi
 Chris Oles
 
-As always, first start the two TS servers, then the RS server and then the client program.
+As always, first start the two TS servers, then the RS server(root server) and then the client program.
 
 List of .py files that use different hosts:
 
