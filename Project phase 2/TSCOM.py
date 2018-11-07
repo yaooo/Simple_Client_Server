@@ -1,8 +1,9 @@
 import socket as mysoc
 import threading
 import time
+import sys
 Port_TS1 = 6000
-DNSTS = "PROJ2-DNSCOM.txt"
+DNSTS = ""
 
 
 def read_file(file_name):
@@ -56,8 +57,13 @@ def server1():
     exit()
 
 
-t1 = threading.Thread(name='server1', target=server1)
-t1.start()
+if __name__ == "__main__":
+    DNSTS = sys.argv[1]
 
-input("Hit ENTER  to exit\n")
-exit()
+    t1 = threading.Thread(name='server1', target=server1)
+    t1.start()
+
+    input("Hit ENTER  to exit\n")
+    exit()
+
+

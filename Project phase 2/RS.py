@@ -1,8 +1,11 @@
 import numpy as np
 import socket as mysoc
 import threading
+import sys
 
 DNSRS = "PROJ2-DNSRS.txt"
+TS_come_host = ""
+TS_edu_host =""
 port_RS = 5001
 port_TS1 = 6000
 port_TS2 = 7000
@@ -92,8 +95,13 @@ def server():
     exit()
 
 
-t1 = threading.Thread(name='server', target=server)
-t1.start()
+if __name__ == "__main__":
+    DNSRS = sys.argv[3]
+    TS_come_host = sys.argv[1]
+    TS_edu_host = sys.argv[2]
 
-input("Hit ENTER  to exit\n")
-exit()
+    t1 = threading.Thread(name='server1', target=server)
+    t1.start()
+
+    input("Hit ENTER  to exit\n")
+    exit()
