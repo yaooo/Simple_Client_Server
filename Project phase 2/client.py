@@ -1,9 +1,10 @@
 import threading
 import socket as mysoc
 import sys
+import time
 
-port_RS = 5001
-hostname_file = ""
+port_RS = 5002
+hostname_file = "PROJ2-HNS.txt"
 RS_host_name = ""
 
 def read_file(file_name):
@@ -21,9 +22,8 @@ def client():
         print('{} \n'.format("socket open error ", err))
 
     # Define the port on which you want to connect to the server
-
-    sa_sameas_myaddr = mysoc.gethostbyname(RS_host_name)
     # connect to the server on local machine
+    sa_sameas_myaddr = mysoc.gethostbyname(RS_host_name)
     server_binding = (sa_sameas_myaddr, port_RS)
     cs.connect(server_binding)
 
@@ -32,10 +32,12 @@ def client():
 
     # Make the output file
     output_file = open("RESOLVED.txt", "w")
-
+    time.sleep(2)
     for i in hostnames:
         temp = i.strip("\n")
-        cs.sendall(temp.encode('utf-8'))
+        cs.send(temp.encode('utf-8'))
+        time.sleep(1)
+
         data_from_server = cs.recv(100)
         msg_decoding = data_from_server.decode('utf-8')
         print("Message sent by the client: ", temp)

@@ -6,9 +6,9 @@ import sys
 DNSRS = "PROJ2-DNSRS.txt"
 TS_come_host = ""
 TS_edu_host =""
-port_RS = 5001
-port_TS1 = 6000
-port_TS2 = 7000
+port_RS = 5002
+port_TS1 = 6001
+port_TS2 = 7001
 
 
 def read_file(file_name):
@@ -30,6 +30,33 @@ def lookup(hostname_string):
     return "ERROR\n"
 
 def server():
+    # connect to TS1: com
+    try:
+        cs1 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
+        print("[C]: Client socket created")
+    except mysoc.error as err:
+        print('{} \n'.format("socket open error ", err))
+    # Define the port on which you want to connect to the server
+    sa_sameas_myaddr1 = mysoc.gethostbyname(TS_come_host)
+    # connect to the server on local machine
+    server_binding1 = (sa_sameas_myaddr1, port_TS1)
+    cs1.connect(server_binding1)
+
+    # connect to TS2
+    try:
+        cs2 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
+        print("[C]: Client socket created")
+    except mysoc.error as err:
+        print('{} \n'.format("socket open error ", err))
+    # Define the port on which you want to connect to the server
+    sa_sameas_myaddr2 = mysoc.gethostbyname(TS_edu_host)
+    # connect to the server on local machine
+    server_binding2 = (sa_sameas_myaddr2, port_TS2)
+    cs2.connect(server_binding2)
+
+    print("Connect to" , TS_come_host, ",", TS_edu_host, ".\n")
+
+    # Connect to client
     try:
         ss = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
         print("[S]: RS Server socket created")
@@ -46,32 +73,8 @@ def server():
     csockid, addr = ss.accept()
     print("[RS]: Got a connection request from a client at", addr)
 
-    # connect to TS1
-    try:
-        cs1 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
-        print("[C]: Client socket created")
-    except mysoc.error as err:
-        print('{} \n'.format("socket open error ", err))
-    # Define the port on which you want to connect to the server
-    sa_sameas_myaddr1 = mysoc.gethostbyname(mysoc.gethostname())
-    # connect to the server on local machine
-    server_binding1 = (sa_sameas_myaddr1, port_TS1)
-    cs1.connect(server_binding1)
 
-    # connect to TS2
-    try:
-        cs2 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
-        print("[C]: Client socket created")
-    except mysoc.error as err:
-        print('{} \n'.format("socket open error ", err))
-    # Define the port on which you want to connect to the server
-    sa_sameas_myaddr2 = mysoc.gethostbyname(mysoc.gethostname())
-    # connect to the server on local machine
-    server_binding2 = (sa_sameas_myaddr2, port_TS2)
-    cs2.connect(server_binding2)
-
-
-    # Receiving message and reverse the message
+    # get message
     while 1:
         data_from_client = csockid.recv(100)
         if not data_from_client: break
@@ -100,7 +103,7 @@ if __name__ == "__main__":
     TS_come_host = sys.argv[1]
     TS_edu_host = sys.argv[2]
 
-    t1 = threading.Thread(name='server1', target=server)
+    t1 = threading.Thread(name='rs_server', target=server)
     t1.start()
 
     input("Hit ENTER  to exit\n")

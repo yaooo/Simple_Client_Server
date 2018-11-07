@@ -1,6 +1,8 @@
 Yao Shi
 Chris Oles
 
+Python 3 required.
+
 As always, first start the two TS servers, then the RS server(root server) and then the client program.
 
 1. I will start both TS servers followed by the name of the input file(on two random ilab machines)
