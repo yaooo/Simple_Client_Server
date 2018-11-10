@@ -1,5 +1,4 @@
-* Yao Shi
-* Chris Oles
+# Simple Client Server Project Phase 2
 
 ## Prerequisites
 Python 3 required.
@@ -33,3 +32,7 @@ python ./CLIENT.py $RSHOSNAME PROJ2-HNS.txt
 ```
 
 * Note the correct answers should be one answer per line  either hostname ipadress A or Error: HOST NOT FOUND)
+
+## Author
+* Yao Shi
+* Chris Oles
