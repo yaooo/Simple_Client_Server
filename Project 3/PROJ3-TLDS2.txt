@@ -1,0 +1,3 @@
+www.princeton.edu 123.63.8.4 A
+ibm.com 68.4.23.35 A
+Rutgers.edu 38.10.3.2 A
