@@ -71,43 +71,34 @@ def client():
 
     # Make the output file
     output_file = open("RESOLVED.txt", "w")
-    time.sleep(2)
     for i in hostnames:
         temp = i.strip("\n").split()
         hexdigest, key, message = compute_key(temp[1], temp[0])
         msg_to_TL = temp[2]
 
         sent_msg = message + "," + hexdigest + "\n"
-        print("Sending msg to AS...")
+        # print("Sending msg to AS...")
         cs.send(sent_msg.encode('utf-8'))
-        time.sleep(1)
 
         data_from_server = cs.recv(100)
         msg_decoding = data_from_server.decode('utf-8')
-        print("Message sent by the client: ", temp)
-        print("**Message Received by the client: ", msg_decoding)
-
-
+        # print("Message sent by the client: ", temp)
+        # print("**Message Received by the client: ", msg_decoding)
 
         TL_number = choose_TL(msg_decoding, TS1_hostname, TS2_hostname)
-        if TL_number == 1:
-            cs1.send(msg_to_TL.encode('utf-8'))
-            d1 = cs1.recv(100)
-            m = d1.decode('utf-8')
-            print("To TL1: ", msg_to_TL)
-            print("**Message Received by the client from TL1: ", m)
-        # elif TL_number ==2:
-        #     cs2.send(msg_to_TL.encode('utf-8'))
-        #     d2 = cs2.recv(100)
-        #     m = d2.decode('utf-8')
-        #     print("To TL2: ", msg_to_TL)
-        #     print("**Message Received by the client from TL2: ", m)
-        # print("HERE\n")
 
-        # if(msg_decoding == "ERROR\n"):
-        #     msg_decoding = "ERROR: HOST NOT FOUND\n"
-        # output_file.write(msg_decoding)
+        if TL_number == 1:
+            cs1.sendall(msg_to_TL.encode('utf-8'))
+            print("To TL1: ", msg_to_TL)
+
+        elif TL_number ==2:
+            cs2.sendall(msg_to_TL.encode('utf-8'))
+            print("To TL2: ", msg_to_TL)
+    cs.send("disconnecting".encode('utf-8'))
+
     output_file.close()
+
+
     # close the client socket
     cs1.close()
     cs2.close()

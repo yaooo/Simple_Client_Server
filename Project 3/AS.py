@@ -85,28 +85,31 @@ def server():
     print("[RS]: Got a connection request from a client at", addr)
 
 
-    # get message
-    while 1:
-        data_from_client = csockid.recv(100)
-        if not data_from_client: break
-        msg_decoding = data_from_client.decode('utf-8')
-        print("message from client:", msg_decoding)
-        message_from_client = msg_decoding.strip("\n").split(',')
-        message_to_TL = message_from_client[0]
-        digest_to_keep = message_from_client[1]
-        # time.sleep(2.5)
+    more_messages = True
+    while more_messages:
+        msg_decoding = csockid.recv(100).decode('utf-8')
+        if msg_decoding == "disconnecting":
+            cs1.send("disconnecting".encode('utf-8'))
+            cs2.send("disconnecting".encode('utf-8'))
+            more_messages = False
+        else:
+            print("message from client:", msg_decoding)
+            message_from_client = msg_decoding.strip("\n").split(',')
+            message_to_TL = message_from_client[0]
+            digest_to_keep = message_from_client[1]
+            # time.sleep(2.5)
 
-        cs1.send(message_to_TL.encode('utf-8'))
-        cs2.send(message_to_TL.encode('utf-8'))
+            cs1.send(message_to_TL.encode('utf-8'))
+            cs2.send(message_to_TL.encode('utf-8'))
 
-        print("Message send to tl1 and tl2....")
-        digest_from_TL1 = cs1.recv(100).decode('utf-8')
-        digest_from_TL2 = cs2.recv(100).decode('utf-8')
+            print("Message send to tl1 and tl2....")
+            digest_from_TL1 = cs1.recv(100).decode('utf-8')
+            digest_from_TL2 = cs2.recv(100).decode('utf-8')
 
 
-        hostname_to_client = choose_TL(digest_to_keep, digest_from_TL1, digest_from_TL2)
-        csockid.send(hostname_to_client.encode('utf-8'))
-        print("Message send to tl1 and tl2....xxxxxx")
+            hostname_to_client = choose_TL(digest_to_keep, digest_from_TL1, digest_from_TL2)
+            csockid.send(hostname_to_client.encode('utf-8'))
+            print("Message send to tl1 and tl2....xxxxxx")
 
     ss.close()
     exit()

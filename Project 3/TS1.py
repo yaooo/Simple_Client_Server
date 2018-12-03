@@ -75,36 +75,23 @@ def server1():
     print("[RS]: Got a connection request from a client at", addr1)
 
     # Receiving message and reverse the message
-    while 1:
-        print("Recieving msg from AS...")
 
+    more_messages = True
+    while more_messages:
+        print("Recieving msg from AS...")
         data_from_client = csockid.recv(100)
-        if not data_from_client:
-            if not data_from_client: break
         msg_decoding = data_from_client.decode('utf-8')
 
-        text = compute_key(msg_decoding, key1)
-        csockid.send(text.encode('utf-8'))
-        print("encrypt:" + text + "\n")
-        time.sleep(2)
+        if (msg_decoding.strip('\n').strip() == "disconnecting"):  # If disconnecting, break out of the loop
+            more_messages = False
+        else:
+            text = compute_key(msg_decoding, key1)
+            csockid.send(text.encode('utf-8'))
+            print("encrypt:" + text + "\n")
+            time.sleep(1)
 
-        count = 0
-        while 1:
-            print("Go in here" + str(count))
-            count+=1
-            data_from_client1 = csockid1.recv(100)
-            print("Stuck on getting msg???")
 
-            if not data_from_client1:
-                print("problem with break??????")
-                break
-            print("Stuck here????????????")
-            msg_decoding1 = data_from_client1.decode('utf-8')
-            text = lookup(msg_decoding1)
-            print("Lookup hostname and send it back to client:" + text + "\n")
-            csockid1.send(text.encode('utf-8'))
-            break
-
+    ss1.close()
     ss.close()
     exit()
 

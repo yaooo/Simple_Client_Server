@@ -73,24 +73,19 @@ def server2():
     csockid2, addr2 = ss2.accept()
     print("[RS]: Got a connection request from a client at", addr2)
 
-    while 1:
-        print("Recieving msg from AS...\n")
+    more_messages = True
+    while more_messages:
+        print("Recieving msg from AS...")
         data_from_client = csockid.recv(100)
-        if not data_from_client: break
         msg_decoding = data_from_client.decode('utf-8')
-        text = compute_key(msg_decoding, key2)
-        print("encrypt:" + text + "\n")
-        csockid.send(text.encode('utf-8'))
-        time.sleep(2)
 
-        # while 1:
-        #     data_from_client2 = csockid2.recv(100)
-        #     if not data_from_client2: break
-        #     msg_decoding2 = data_from_client2.decode('utf-8')
-        #     text = lookup(msg_decoding2)
-        #     print("Lookup hostname and send it back to client:" + text + "\n")
-        #     csockid2.send(text.encode('utf-8'))
-        #     break
+        if (msg_decoding.strip("\n").strip() == "disconnecting"):  # If disconnecting, break out of the loop
+            more_messages = False
+        else:
+            text = compute_key(msg_decoding, key2)
+            csockid.send(text.encode('utf-8'))
+            print("encrypt:" + text + "\n")
+            time.sleep(1)
 
     ss2.close()
     ss.close()
