@@ -38,11 +38,12 @@ def lookup(hostname_string):
         hostname_string = hostname_string[4:].strip("\n")
     lines = read_file(DNSTS)
     for i in lines:
+        t = i
         i = i.lower()
         if i.find(hostname_string.lower()) != -1:
             if not i.endswith("\n"):
-                return i + "\n"
-            return i
+                return t + "\n"
+            return t
     return "ERROR:HOST NOT FOUND\n"
 
 def server2():

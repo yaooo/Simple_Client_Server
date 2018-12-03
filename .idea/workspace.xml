@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="816b821f-0535-4983-a247-d965fa5c7dbc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 3/AS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/AS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project 3/TS1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/TS1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project 3/TS2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/TS2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 3/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/client.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project 3/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
+            <state relative-caret-position="168">
+              <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -31,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project 3/AS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+            <state relative-caret-position="-1893">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -40,11 +37,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Project 3/PROJ3-TLDS1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project 3/TS2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="90" column="33" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
+            <state relative-caret-position="205">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="46" selection-end-column="35" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -52,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Project 3/TS1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+            <state relative-caret-position="307">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -68,7 +74,25 @@
         <entry file="file://$PROJECT_DIR$/Project 3/RESOLVED.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Project 3/PROJ3-HNS.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Project 3/PROJ3-TLDS2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -81,8 +105,8 @@
       <find>sleep</find>
       <find>print</find>
       <find>GET</find>
-      <find>xxxx</find>
       <find>get</find>
+      <find>xxxx</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,8 +147,8 @@
         <option value="$PROJECT_DIR$/Project 3/PROJ3-TLDS2.txt" />
         <option value="$PROJECT_DIR$/Project 3/client.py" />
         <option value="$PROJECT_DIR$/Project 3/AS.py" />
-        <option value="$PROJECT_DIR$/Project 3/TS1.py" />
         <option value="$PROJECT_DIR$/Project 3/TS2.py" />
+        <option value="$PROJECT_DIR$/Project 3/TS1.py" />
       </list>
     </option>
   </component>
@@ -422,13 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/PROJ3-TLDS2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Project phase 2/RESOLVED.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -522,10 +539,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Project pahse 1/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project 3/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Project 3/PROJ3-TLDS1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project 3/RESOLVED.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project 3/AS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1893">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -536,54 +587,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project pahse 1/client.py">
+    <entry file="file://$PROJECT_DIR$/Project 3/PROJ3-TLDS2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="44" />
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/RESOLVED.txt">
+    <entry file="file://$PROJECT_DIR$/Project 3/TS2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/AS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/TS1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+        <state relative-caret-position="205">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="46" selection-end-column="35" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/TS2.py">
+    <entry file="file://$PROJECT_DIR$/Project 3/TS1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="90" column="33" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
+        <state relative-caret-position="307">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
