@@ -1,4 +1,4 @@
-# Simple Client Server Project Phase 2
+# Simple Client Server Project 3
 
 ## Prerequisites
 Python 3 required.
