@@ -1,3 +1,6 @@
-www.princeton.edu 123.63.8.4 A
-ibm.com 68.4.23.35 A
-Rutgers.edu 38.10.3.2 A
+qtsdatacenter.aws.edu   128.60.3.2  A
+www.rutgers.com   192.64.4.4  A
+mx.rutgers.com 192.64.4.5 A
+grep.cs.princeton.edu 182.49.3.2 A
+www.ibm.com 64.42.3.4 A
+www.google.edu  8.7.45.2 A
