@@ -43,7 +43,7 @@ def lookup(hostname_string):
             if not i.endswith("\n"):
                 return i + "\n"
             return i
-    return "ERROR\n"
+    return "ERROR:HOST NOT FOUND\n"
 
 def server2():
     key2 = get_key()
@@ -86,6 +86,13 @@ def server2():
             csockid.send(text.encode('utf-8'))
             print("encrypt:" + text + "\n")
             time.sleep(1)
+
+        m_client = csockid2.recv(100).decode('utf-8')
+        if(m_client == "-1"):
+            print("invalid msg")
+        else:
+            x = lookup(m_client)
+            csockid2.send(x.encode('utf-8'))
 
     ss2.close()
     ss.close()

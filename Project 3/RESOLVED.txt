@@ -1,0 +1,4 @@
+cpp.cs.rutgers.edu ERROR:HOST NOT FOUND
+java.cs.rutgers.edu ERROR:HOST NOT FOUND
+java.cs.rutgers.edu ERROR:HOST NOT FOUND
+cpp.cs.rutgers.edu www.google.com  8.6.4.2 a

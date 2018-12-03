@@ -88,12 +88,20 @@ def client():
         TL_number = choose_TL(msg_decoding, TS1_hostname, TS2_hostname)
 
         if TL_number == 1:
+            cs2.sendall("-1".encode('utf-8'))
             cs1.sendall(msg_to_TL.encode('utf-8'))
             print("To TL1: ", msg_to_TL)
+            m = cs1.recv(100).decode('utf-8')
+            print("GET: " + m)
+            output_file.write(TS1_hostname + " " + m)
 
         elif TL_number ==2:
+            cs1.sendall("-1".encode('utf-8'))
             cs2.sendall(msg_to_TL.encode('utf-8'))
             print("To TL2: ", msg_to_TL)
+            m = cs2.recv(100).decode('utf-8')
+            output_file.write(TS2_hostname + " " + m)
+
     cs.send("disconnecting".encode('utf-8'))
 
     output_file.close()

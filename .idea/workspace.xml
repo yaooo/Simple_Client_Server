@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="816b821f-0535-4983-a247-d965fa5c7dbc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 3/AS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/AS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project 3/TS1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/TS1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project 3/TS2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/TS2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project 3/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 3/client.py" afterDir="false" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project 3/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="96" column="37" lean-forward="true" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+            <state relative-caret-position="110">
+              <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
                 <element signature="e#920#1015#0" />
@@ -30,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project 3/AS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="242">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -45,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project 3/TS2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-end-line="76" />
+            <state relative-caret-position="399">
+              <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-end-line="46" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -54,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Project 3/TS1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="289">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -111,10 +110,10 @@
         <option value="$PROJECT_DIR$/Project 3/PROJ3-KEY1.txt" />
         <option value="$PROJECT_DIR$/Project 3/PROJ3-TLDS1.txt" />
         <option value="$PROJECT_DIR$/Project 3/PROJ3-TLDS2.txt" />
-        <option value="$PROJECT_DIR$/Project 3/TS1.py" />
-        <option value="$PROJECT_DIR$/Project 3/TS2.py" />
-        <option value="$PROJECT_DIR$/Project 3/client.py" />
         <option value="$PROJECT_DIR$/Project 3/AS.py" />
+        <option value="$PROJECT_DIR$/Project 3/client.py" />
+        <option value="$PROJECT_DIR$/Project 3/TS2.py" />
+        <option value="$PROJECT_DIR$/Project 3/TS1.py" />
       </list>
     </option>
   </component>
@@ -319,12 +318,12 @@
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13877308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13877308" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45070422" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27272728" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -480,13 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project pahse 1/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Project pahse 1/PROJI-DNSTS.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -546,20 +538,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/TS1.py">
+    <entry file="file://$PROJECT_DIR$/Project 3/AS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="242">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project pahse 1/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project 3/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="96" column="37" lean-forward="true" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+        <state relative-caret-position="110">
+          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <element signature="e#920#1015#0" />
@@ -570,20 +569,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project 3/TS2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-end-line="76" />
+        <state relative-caret-position="399">
+          <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-end-line="46" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project 3/AS.py">
+    <entry file="file://$PROJECT_DIR$/Project 3/TS1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="289">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
