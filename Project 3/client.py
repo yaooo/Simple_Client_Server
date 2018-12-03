@@ -1,6 +1,5 @@
 import threading
 import socket as mysoc
-import sys
 import time
 import hmac
 
@@ -11,13 +10,11 @@ hostname_file = "PROJ3-HNS.txt"
 TS2_hostname = "java.cs.rutgers.edu"
 TS1_hostname = "cpp.cs.rutgers.edu"
 
-
 def read_file(file_name):
     with open(file_name) as f:
         lines = f.readlines()
     f.close()
     return lines
-
 
 def choose_TL(name, TL1, TL2):
     if name == TL1:
@@ -26,10 +23,6 @@ def choose_TL(name, TL1, TL2):
         return 2
     return -1
 
-
-# Example
-# d2 = hmac.new("k3522".encode(), c1.encode("utf-8"))
-# print(d2.hexdigest())
 def compute_key(message, key):
     d2 = hmac.new(key.encode(), message.encode("utf-8"))
     hexdigest = d2.hexdigest()
@@ -53,8 +46,8 @@ def client():
         print("[C]: Client socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    sa_sameas_myaddr = mysoc.gethostbyname(mysoc.gethostname())
-    cs1.connect((sa_sameas_myaddr, port_TS1))
+    sa_sameas_myaddr1 = mysoc.gethostbyname(TS1_hostname)
+    cs1.connect((sa_sameas_myaddr1, port_TS1))
 
     # Connect to TL2
     try:
@@ -62,9 +55,8 @@ def client():
         print("[C]: Client socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    sa_sameas_myaddr = mysoc.gethostbyname(mysoc.gethostname())
-    cs2.connect((sa_sameas_myaddr, port_TS2))
-
+    sa_sameas_myaddr2 = mysoc.gethostbyname(TS2_hostname)
+    cs2.connect((sa_sameas_myaddr2, port_TS2))
 
     # READ FILE
     hostnames = read_file(hostname_file)
@@ -75,16 +67,10 @@ def client():
         temp = i.strip("\n").split()
         hexdigest, key, message = compute_key(temp[1], temp[0])
         msg_to_TL = temp[2]
-
         sent_msg = message + "," + hexdigest + "\n"
-        # print("Sending msg to AS...")
         cs.send(sent_msg.encode('utf-8'))
-
         data_from_server = cs.recv(100)
         msg_decoding = data_from_server.decode('utf-8')
-        # print("Message sent by the client: ", temp)
-        # print("**Message Received by the client: ", msg_decoding)
-
         TL_number = choose_TL(msg_decoding, TS1_hostname, TS2_hostname)
 
         if TL_number == 1:

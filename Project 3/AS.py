@@ -45,11 +45,11 @@ def server():
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
     # Define the port on which you want to connect to the server
-    sa_sameas_myaddr1 = mysoc.gethostbyname(TS1_host)
+    sa_sameas_myaddr1 = mysoc.gethostbyname(TS1_hostname)
     # connect to the server on local machine
-    # server_binding1 = (sa_sameas_myaddr1, port_TS1)
+    server_binding1 = (sa_sameas_myaddr1, port_TS1)
 
-    server_binding1 = (mysoc.gethostbyname(mysoc.gethostname()), port_TS1)
+    # server_binding1 = (mysoc.gethostbyname(mysoc.gethostname()), port_TS1)
     cs1.connect(server_binding1)
 
     # connect to TS2
@@ -59,10 +59,10 @@ def server():
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
     # Define the port on which you want to connect to the server
-    sa_sameas_myaddr2 = mysoc.gethostbyname(TS2_host)
+    sa_sameas_myaddr2 = mysoc.gethostbyname(TS2_hostname)
     # connect to the server on local machine
-    # server_binding2 = (sa_sameas_myaddr2, port_TS2)
-    server_binding2 = (mysoc.gethostbyname(mysoc.gethostname()), port_TS2)
+    server_binding2 = (sa_sameas_myaddr2, port_TS2)
+    # server_binding2 = (mysoc.gethostbyname(mysoc.gethostname()), port_TS2)
     cs2.connect(server_binding2)
 
     print("Connect to" , TS1_host, ",", TS2_host, ".\n")
