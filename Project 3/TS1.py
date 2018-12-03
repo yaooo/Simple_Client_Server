@@ -5,9 +5,12 @@ import hmac
 
 import sys
 Port_TS1 = 6000
+Port_TS1_client = 6001
+
 TS1_hostname = "cpp.cs.rutgers.edu"
 DNSTS = "PROJ3-TLDS1.txt"
-
+key_file1 = "PROJ3-KEY1.txt"
+key1 = ""
 
 # Example
 # d2 = hmac.new("k3522".encode(), c1.encode("utf-8"))
@@ -15,7 +18,13 @@ DNSTS = "PROJ3-TLDS1.txt"
 def compute_key(message, key):
     d2 = hmac.new(key.encode(), message.encode("utf-8"))
     hexdigest = d2.hexdigest()
-    return d2, hexdigest
+    return hexdigest
+
+def get_key():
+    with open(key_file1) as f:
+        lines = f.readlines()
+    f.close()
+    return lines[0].strip('\n').strip()
 
 
 def read_file(file_name):
@@ -38,6 +47,7 @@ def lookup(hostname_string):
     return "ERROR\n"
 
 def server1():
+    key1 = get_key()
     try:
         ss = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
         print("[S]: RS Server socket created")
@@ -53,19 +63,48 @@ def server1():
     csockid, addr = ss.accept()
     print("[RS]: Got a connection request from a client at", addr)
 
+    try:
+        ss1 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
+        print("[S]: RS Server socket created")
+    except mysoc.error as err:
+        print('{} \n'.format("socket open error ", err))
+    server_binding1 = ('', Port_TS1_client)
+    ss1.bind(server_binding1)
+    ss1.listen(1)
+    csockid1, addr1 = ss1.accept()
+    print("[RS]: Got a connection request from a client at", addr1)
+
     # Receiving message and reverse the message
     while 1:
+        print("Recieving msg from AS...")
+
         data_from_client = csockid.recv(100)
         if not data_from_client:
             if not data_from_client: break
         msg_decoding = data_from_client.decode('utf-8')
 
-        if not len(msg_decoding.strip("\n")) == 0:
-            print("Hostname from client:", msg_decoding)
-            text = lookup(msg_decoding)
-            print("Test:" + text)
-            csockid.send(text.encode('utf-8'))
-        time.sleep(1)
+        text = compute_key(msg_decoding, key1)
+        csockid.send(text.encode('utf-8'))
+        print("encrypt:" + text + "\n")
+        time.sleep(2)
+
+        count = 0
+        while 1:
+            print("Go in here" + str(count))
+            count+=1
+            data_from_client1 = csockid1.recv(100)
+            print("Stuck on getting msg???")
+
+            if not data_from_client1:
+                print("problem with break??????")
+                break
+            print("Stuck here????????????")
+            msg_decoding1 = data_from_client1.decode('utf-8')
+            text = lookup(msg_decoding1)
+            print("Lookup hostname and send it back to client:" + text + "\n")
+            csockid1.send(text.encode('utf-8'))
+            break
+
     ss.close()
     exit()
 

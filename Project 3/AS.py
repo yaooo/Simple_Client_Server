@@ -1,17 +1,18 @@
 import numpy as np
 import socket as mysoc
 import threading
-import sys
 import hmac
+import time
 
 TS1_host = ""
 TS2_host =""
 
-TS1_hostname = "kill.cs.rutgers.edu"
-TS2_hostname = "grep.cs.rutgers.edu"
-port_RS = 5002
-port_TS1 = 6001
-port_TS2 = 7001
+TS2_hostname = "java.cs.rutgers.edu"
+TS1_hostname = "cpp.cs.rutgers.edu"
+
+port_RS = 5000
+port_TS1 = 6000
+port_TS2 = 7000
 
 
 # Example
@@ -28,8 +29,15 @@ def read_file(file_name):
     f.close()
     return lines
 
+def choose_TL(digest_stored, digest_from_TL1, digest_from_TL2):
+    if digest_from_TL1 == digest_stored:
+        return TS1_hostname
+    if digest_from_TL2 == digest_stored:
+        return TS2_hostname
+    return "Digest Not Match"
+
 def server():
-    """
+
     # connect to TS1: com
     try:
         cs1 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
@@ -39,7 +47,9 @@ def server():
     # Define the port on which you want to connect to the server
     sa_sameas_myaddr1 = mysoc.gethostbyname(TS1_host)
     # connect to the server on local machine
-    server_binding1 = (sa_sameas_myaddr1, port_TS1)
+    # server_binding1 = (sa_sameas_myaddr1, port_TS1)
+
+    server_binding1 = (mysoc.gethostbyname(mysoc.gethostname()), port_TS1)
     cs1.connect(server_binding1)
 
     # connect to TS2
@@ -51,11 +61,11 @@ def server():
     # Define the port on which you want to connect to the server
     sa_sameas_myaddr2 = mysoc.gethostbyname(TS2_host)
     # connect to the server on local machine
-    server_binding2 = (sa_sameas_myaddr2, port_TS2)
+    # server_binding2 = (sa_sameas_myaddr2, port_TS2)
+    server_binding2 = (mysoc.gethostbyname(mysoc.gethostname()), port_TS2)
     cs2.connect(server_binding2)
 
     print("Connect to" , TS1_host, ",", TS2_host, ".\n")
-    """
 
 # Connect to client
     try:
@@ -81,6 +91,22 @@ def server():
         if not data_from_client: break
         msg_decoding = data_from_client.decode('utf-8')
         print("message from client:", msg_decoding)
+        message_from_client = msg_decoding.strip("\n").split(',')
+        message_to_TL = message_from_client[0]
+        digest_to_keep = message_from_client[1]
+        # time.sleep(2.5)
+
+        cs1.send(message_to_TL.encode('utf-8'))
+        cs2.send(message_to_TL.encode('utf-8'))
+
+        print("Message send to tl1 and tl2....")
+        digest_from_TL1 = cs1.recv(100).decode('utf-8')
+        digest_from_TL2 = cs2.recv(100).decode('utf-8')
+
+
+        hostname_to_client = choose_TL(digest_to_keep, digest_from_TL1, digest_from_TL2)
+        csockid.send(hostname_to_client.encode('utf-8'))
+        print("Message send to tl1 and tl2....xxxxxx")
 
     ss.close()
     exit()
