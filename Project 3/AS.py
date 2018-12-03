@@ -109,7 +109,6 @@ def server():
 
             hostname_to_client = choose_TL(digest_to_keep, digest_from_TL1, digest_from_TL2)
             csockid.send(hostname_to_client.encode('utf-8'))
-            print("Message send to tl1 and tl2....xxxxxx")
 
     ss.close()
     exit()

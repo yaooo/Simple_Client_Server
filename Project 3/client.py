@@ -78,7 +78,6 @@ def client():
             cs1.sendall(msg_to_TL.encode('utf-8'))
             print("To TL1: ", msg_to_TL)
             m = cs1.recv(100).decode('utf-8')
-            print("GET: " + m)
             output_file.write(TS1_hostname + " " + m)
 
         elif TL_number ==2:

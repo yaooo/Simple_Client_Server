@@ -91,9 +91,7 @@ def server1():
             time.sleep(1)
 
         m_client = csockid1.recv(100).decode('utf-8')
-        if (m_client == "-1"):
-            print("invalid msg")
-        else:
+        if not (m_client == "-1"):
             x = lookup(m_client)
             csockid1.send(x.encode('utf-8'))
 
