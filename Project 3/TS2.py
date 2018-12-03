@@ -5,7 +5,7 @@ import hmac
 
 import sys
 Port_TS1 = 7000
-TS2_hostname = "grep.cs.rutgers.edu"
+TS2_hostname = "java.cs.rutgers.edu"
 DNSTS = "PROJ3-TLDS2.txt"
 key = "PROJ3-KEY2.txt"
 

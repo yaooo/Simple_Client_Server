@@ -5,7 +5,7 @@ import hmac
 
 import sys
 Port_TS1 = 6000
-TS1_hostname = "kill.cs.rutgers.edu"
+TS1_hostname = "cpp.cs.rutgers.edu"
 DNSTS = "PROJ3-TLDS1.txt"
 
 
