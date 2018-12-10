@@ -11,12 +11,12 @@ TLDS1 should run in cpp.cs.rutgers.edu and TLDS2 should run in java.cs.rutgers.e
 
 In java.cs.rutgers.edu, run:
 ```
-python3 TS2.py
+python3 TLDS2.py
 ```
 
 In cpp.cs.rutgers.edu, run:
 ```
-python3 TS1.py
+python3 TLDS1.py
 ```
 
 Client and AS server should run in the same computer, run
